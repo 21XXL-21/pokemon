@@ -1,0 +1,182 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.3s ease; /* Animación suave para el cambio de fondo */
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://images5.alphacoders.com/109/thumb-1920-1092839.jpg') repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    position: relative;
+    animation: fadeIn 2s ease-in-out; /* Animación de aparición */
+}
+
+.hero-content {
+    text-align: center;
+    animation: slideIn 1.5s ease-out;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    animation: bounceIn 1s ease;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    animation: fadeInUp 1.5s ease;
+}
+
+/* Animaciones de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main Content */
+.pokemon-section {
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeInUp 2s ease;
+}
+
+.pokemon-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    animation: fadeInUp 2s ease;
+}
+
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 30px;
+}
+
+/* Estilo de las tarjetas de Pokémon */
+.pokemon-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease-in-out;
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    overflow: hidden; /* Esto asegura que las imágenes no se salgan de la tarjeta */
+    animation: fadeInUp 1s ease; /* Animación para las cartas */
+}
+
+/* Efecto al pasar el mouse */
+.pokemon-card:hover {
+    transform: scale(1.05); /* Aumenta el tamaño */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Sombra más grande */
+    animation: pulse 1s infinite; /* Pulsación de la carta */
+}
+
+/* Añadir una animación de rotación */
+.pokemon-card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto de rotación en la imagen */
+.pokemon-card:hover img {
+    transform: rotate(10deg); /* Rota la imagen 10 grados */
+}
+
+.pokemon-card h3 {
+    font-size: 1.5rem;
+    color: #ee1515;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+/* Cambio de color en el texto al pasar el mouse */
+.pokemon-card:hover h3 {
+    color: #ffcc00; /* Cambia el color del nombre del Pokémon */
+}
+
+/* Efecto pulsante en la tarjeta */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Footer */
+footer {
+    background: transparent;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    animation: fadeInUp 1.5s ease;
+}
+
+/* Sombra suave en el pie de página */
+footer:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
